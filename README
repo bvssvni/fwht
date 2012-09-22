@@ -1,0 +1,33 @@
+
+ FWHT - Fast Walsh Hadamard Transform in C
+ BSD license.
+ by Sven Nilsen, 2012
+ http://www.cutoutpro.com
+ 
+ Version: 0.000 in angular degrees version notation
+ http://isprogrammingeasy.blogspot.no/2012/08/angular-degrees-versioning-notation.html
+
+This implementation was made without looking at other FWHT algorithms,
+so I release under its own license.
+
+	// Compile unit tests with GCC.
+	gcc -o fwht-test fwht-test.c -Wall
+
+	// Run code.
+	./fwht-test
+ 
+Fast Walsh Hadamard Transform
+ 
+The input souce has to be in size 2^n.
+
+Example use: You have two similar images where the camera
+is moved or rotated slightly and you want to find the
+transformation of the camera movement. You then take
+two 4x4 pieces of each image and transform each color channel
+with FWHT and then take the differences, sum them
+and you will have a number that tells you how similar the
+two pieces are.
+ 
+When you apply a FWHT twice, you get the same as before,
+only multiplied with a factor of the size of the data.
+ 
